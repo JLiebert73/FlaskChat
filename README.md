@@ -93,7 +93,6 @@ FlaskChat relies on several dependencies to provide its real-time chat functiona
 - Flask
 - Flask-SocketIO
 - Flask-SQLAlchemy
-- Eventlet (For production deployment)
 
 Make sure to keep your dependencies up to date and consider using a virtual environment to manage your project's dependencies effectively.
 
