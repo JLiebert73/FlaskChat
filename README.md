@@ -68,7 +68,7 @@ source venv/bin/activate
   ```
 
 6. **Access FlaskChat**: 
-- Open your web browser and visit http://localhost:8020 to access FlaskChat locally. You'll see the FlaskChat chat interface.
+- Open your web browser and visit http://localhost:8030 to access FlaskChat locally. You'll see the FlaskChat chat interface.
 
 These instructions assume you have Python and pip installed on your system.
 
