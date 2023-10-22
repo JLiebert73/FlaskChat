@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="content-section">
+    <h2>Chat Interface</h2>
+
+    <!-- User list -->
+    <div class="user-list">
+        <h3>User List</h3>
+        <ul>
+            {% for user in users %}
+                <li><a class="user-link" data-user-id="{{ user.id }}" href="#">{{ user.username }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Chat container -->
+    <div class="chat-container">
+        <ul class="chat-messages">
+            <!-- Messages will be inserted here dynamically using JavaScript -->
+        </ul>
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button id="send-button">Send</button>
+    </div>
+</div>
+<script src="https://cdn.socket.io/socket.io-4.3.2.js"></script>
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+</div> <!-- Close the content-section div from the layout -->
+
+{% endblock %}

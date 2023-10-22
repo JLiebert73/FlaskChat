@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1>About This Messaging App</h1>
+
+<p>
+    This messaging app is developed as a part of an assignment by I'mBesideYou. It's designed to provide a user-friendly interface for sending and receiving messages. Here's a brief overview of its key features and technologies used:
+<p>
+    <strong>Key Features:</strong></p>
+    <ul>
+        <li>User-friendly chat interface</li>
+        <li>Real-time messaging using Socket.IO</li>
+        <li>RESTful architecture for managing resources</li>
+        <li>Atomic design principles for a modular and maintainable structure</li>
+        <li>User authentication and registration</li>
+        <li>Message history storage</li>
+    </ul>
+
+    <strong>Technologies Used:</strong>
+    <ul>
+        <li>Flask - A micro web framework for Python</li>
+        <li>Socket.IO - For real-time bidirectional communication</li>
+        <li>HTML, CSS, and JavaScript - For the frontend interface</li>
+        <li>SQLite - A lightweight relational database for message storage</li>
+    </ul>
+
+    <strong>RESTful Design:</strong>
+    This app follows RESTful principles by representing resources as endpoints and using HTTP methods for CRUD (Create, Read, Update, Delete) operations. For example, users can create new messages, retrieve message history, and delete messages using HTTP endpoints.
+    <p></p><p>
+    <strong>Atomic Design:</strong></p>
+    Atomic design principles are applied to create modular and reusable UI components. This ensures consistency in design and ease of maintenance as the app evolves.
+
+    Enjoy using this messaging app and feel free to provide feedback for further improvements.
+</p>
+
+{% endblock content %}

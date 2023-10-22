@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    Your Post
+                </legend>
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+                    {{ form.title(class="form-control") }}
+                    <small class="form-text text-muted">
+                        <span id="titleWordCount">
+                            {% if form.title.data %}
+                                {{ 100 - form.title.data|wordcount }}
+                            {% else %}
+                                100
+                            {% endif %}
+                        </span>
+                        words remaining (Max 100 words)
+                    </small>
+                    {% if form.title.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.content.label(class="form-control-label") }}
+                    {{ form.content(class="form-control") }}
+                    <small class="form-text text-muted">
+                        <span id="contentCharCount">
+                            {% if form.content.data %}
+                                {{ 1000 - form.content.data|length }}
+                            {% else %}
+                                1000
+                            {% endif %}
+                        </span>
+                        / 1000
+                    </small>
+                    {% if form.content.errors %}
+                        <div class="invalid-feedback">
+                            {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const titleInput = document.getElementById('title');
+        const titleWordCountSpan = document.getElementById('titleWordCount');
+        const maxTitleWordLimit = 100; // Max word limit for title
+
+        titleInput.addEventListener('input', function() {
+            const titleWordCount = titleInput.value.trim().split(/\s+/).length;
+            const remainingWords = maxTitleWordLimit - titleWordCount;
+            titleWordCountSpan.textContent = remainingWords;
+
+            if (remainingWords < 0) {
+                titleWordCountSpan.classList.add('text-danger');
+            } else {
+                titleWordCountSpan.classList.remove('text-danger');
+            }
+        });
+
+        const contentInput = document.getElementById('content');
+        const contentCharCountSpan = document.getElementById('contentCharCount');
+        const maxCharLimit = 1000; // Max character limit
+
+        contentInput.addEventListener('input', function() {
+            const remainingChars = maxCharLimit - contentInput.value.length;
+            contentCharCountSpan.textContent = remainingChars;
+
+            if (remainingChars < 0) {
+                contentCharCountSpan.classList.add('text-danger');
+            } else {
+                contentCharCountSpan.classList.remove('text-danger');
+            }
+        });
+    </script>
+{% endblock content %}
