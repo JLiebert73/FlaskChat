@@ -1,4 +1,8 @@
 # FlaskChat
+Author: Vedic Dutta
+Roll No.: 21CH10077
+University: Indian Institute of Technology Kharagpur
+Department: Chemical Engineering
 
 This is a README file for FlaskChat, a Flask-based real-time messaging application.
 
