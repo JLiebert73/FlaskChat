@@ -86,7 +86,7 @@ To use FlaskChat effectively, follow these guidelines:
 
 3. **Chat Conversations**: Use the chat interface to engage in real-time conversations with other users. Select a user from the list, type your message, and click "Send" to initiate a chat.
 
-4. **Receive Messages**: Messages sent to you will appear in the chat interface. Continue the conversation by responding to messages.
+4. **Receive Messages**: Messages sent to you will appear in the chat interface.
 
 5. **Log Out**: Log out of your FlaskChat account when you're done with your chat session to keep your account secure.
 
